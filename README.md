@@ -10,17 +10,17 @@ This project used CoVID-19 case data from LA County Dep. of Public Health, which
 Note: These files are developed and tested in Python3.6.
 
 The following packages are required to run the codes:
-*jupyter noteboook
-*numpy
-*json
-*re
-*matplotlib
-*itertools
-*pandas
-*scipy
-*gekko
-*IPython
-*datetime
+* jupyter noteboook
+* numpy
+* json
+* re
+* matplotlib
+* itertools
+* pandas
+* scipy
+* gekko
+* IPython
+* datetime
 
 These packages can be installed by issuing the following command "pip install name_of_the_package".
 
@@ -33,10 +33,10 @@ Output:
 -Computing and displaying the risk score as well as Rt for both the entire LA county and its communities. For simplicity, we illustrate it for the following 4 communities, namely 'West Hollywood', 'East Los Angeles', 'Castaic', and 'San Pedro'.
 
 Parameters:
-*number_of_days_passed_from_16th: #days passed March 16,2020 (e.g. it is 84 until June 7, 2020)
-*show_Risk :  True if showing risk score , otherwise False to show Rt and its confidence interval
-*Whole_LAcounty:  True to plot for entire LA county, and False to plot for the 4 communities
-*moving_average_days: used for smoothing the curves
+* number_of_days_passed_from_16th: #days passed March 16,2020 (e.g. it is 84 until June 7, 2020)
+* show_Risk :  True if showing risk score , otherwise False to show Rt and its confidence interval
+* Whole_LAcounty:  True to plot for entire LA county, and False to plot for the 4 communities
+* moving_average_days: used for smoothing the curves
 
 ## Running **estimation_R_for_heatmap_histogram_of_RiskScore_and_R.ipynb**
 
@@ -48,8 +48,8 @@ Output:
 -Generating a csv file for showing a heatmap of risk scores
 
 Parameters:
-*number_of_days_passed_from_16th: #days passed March 16,2020 (e.g. it is 84 until June 7, 2020)
-*moving_average_days: used for smoothing the curves
+* number_of_days_passed_from_16th: #days passed March 16,2020 (e.g. it is 84 until June 7, 2020)
+* moving_average_days: used for smoothing the curves
 
 ## Running **generate_heatmap.py**
 
