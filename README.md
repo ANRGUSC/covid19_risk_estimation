@@ -44,8 +44,8 @@ Required input files:
 “Covid-19.csv”, “lacounty_covid.json”, “population.json”, “Covid-19-density.csv”
 
 Output:
--Computing and displaying the histogram of risk scores as well as Rt across all communities
--Generating a csv file for showing a heatmap of risk scores
+* Computing and displaying the histogram of risk scores as well as Rt across all communities
+* Generating a csv file for showing a heatmap of risk scores
 
 Parameters:
 * number_of_days_passed_from_16th: #days passed March 16,2020 (e.g. it is 84 until June 7, 2020)
@@ -57,10 +57,10 @@ Required input files:
 “Covid-19.csv”, “lacounty_covid.json”, “population.json”, “Covid-19-density.csv”, "la.shp"
 
 Output:
--Generate heatmaps for each day 
+* Generate heatmaps for each day 
 
 Execution command:
-- python3.x generate_heatmap.py
+* python3.x generate_heatmap.py
 
 ## Questions
 For any questions about this project, please contact Prof. Bhaskar Krishnamachari (bkrishna@usc.edu).
