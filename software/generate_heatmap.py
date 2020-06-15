@@ -19,6 +19,7 @@ import numpy as np
 import seaborn as sns
 from matplotlib.colors import ListedColormap
 import matplotlib.patches as mpatches
+import csv
 
 
 
@@ -213,8 +214,8 @@ def retrieve_risk_date():
     os.chdir('../data/')
     # covid = pd.read_csv('Covid-19-R-cleaned.csv',header=0)
     # denfold = 'dailycases'
-    covid = pd.read_csv('Covid-19-R-Prediction-cleaned.csv',header=0)
-    denfold = 'dailycasesP'
+    covid = pd.read_csv('Covid-19-R-cleaned.csv',header=0)
+    denfold = 'dailycasesR'
     if not os.path.exists(denfold):
         os.makedirs(denfold)
     date_list = covid['Time Stamp'].unique()
@@ -236,8 +237,8 @@ def generate_heatmap_color_bydate(d):
     # covid = pd.read_csv('Covid-19-R-cleaned.csv',header=0)
     # filename = 'dailycasesR/%s.csv'%(d)
     # outfile = '../plots/map/risk_%s.png'%(d)
-    covid = pd.read_csv('Covid-19-R-Prediction-cleaned.csv',header=0)
-    filename = 'dailycasesP/%s.csv'%(d)
+    covid = pd.read_csv('Covid-19-R-cleaned.csv',header=0)
+    filename = 'dailycasesR/%s.csv'%(d)
     
     regions = gpd.read_file('shapefile/la.shp')
     
@@ -245,7 +246,7 @@ def generate_heatmap_color_bydate(d):
 
 
     colors = ['Green','Yellow','Orange','Red','White']
-    labels = ['Safe','Low-risk','Medium-risk','High-risk','No data']
+    labels = ['Very-Low-Risk','Low-risk','Medium-risk','High-risk','No data']
     data['cat'] = 'No data'
     data['color'] = 'White'
     print(type(data['Risk-Level'].iloc[0]))
@@ -263,7 +264,7 @@ def generate_heatmap_color_bydate(d):
     merged['Time Stamp'] = merged['Time Stamp'].fillna(0)
     merged['Longitude'] = merged['Longitude'].fillna(0)
     merged['Latitude'] = merged['Latitude'].fillna(0)
-    merged['Risk-Score'] = merged['Risk-Score'].fillna(0)
+    #merged['Risk-Score'] = merged['Risk-Score'].fillna(0)
     merged['Risk-Level'] = merged['Risk-Level'].fillna('-1')
     merged['cat'] = merged['cat'].fillna('No data')
     merged['color'] = merged['color'].fillna('White')
@@ -295,7 +296,7 @@ def generate_heatmap_color_bydate(d):
     plt.legend(handles=colors_patch,loc = "lower right",facecolor="lightblue")
     # plt.show()
 
-    outfile = '../plots/map/predictions/risk_%s.png'%(d)
+    outfile = '../plots/map/risk_%s.png'%(d)
     plt.savefig(outfile,bbox_inches='tight')
 
 def generate_heatmap_color_bydate2(d):
@@ -435,13 +436,15 @@ def aggregate_population():
 
 
 def clean_data():
-    with open("Covid-19-Prediction.csv","r") as source:
-    rdr= csv.reader( source )
-    with open("Covid-19-Prediction-cleaned.csv","w") as result:
-        wtr= csv.writer( result )
-        for r in rdr:
-            #print(r[5])
-            wtr.writerow( (r[1], r[2], r[3], r[4], r[5]) )
+    os.chdir('../data/')
+    with open("Covid-19-R.csv","r") as source:
+        rdr= csv.reader( source )
+        with open("Covid-19-R-cleaned.csv","w") as result:
+            wtr= csv.writer( result )
+            for r in rdr:
+                #print(r[5])
+                wtr.writerow( (r[1], r[2], r[3], r[4], r[6]) )
+    return
 
 
 def plot_caseden_popden(d):
@@ -512,9 +515,8 @@ if __name__ == "__main__":
     # process_covid()
     # process_density()
 
-    # retrieve_risk_date()
-
-    clean_data()
+    #clean_data()
+    #retrieve_risk_date()
     generate_heatmap_color()
 
     # Plots
