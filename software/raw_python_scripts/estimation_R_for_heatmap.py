@@ -124,7 +124,7 @@ def solve_beta_for_single_time_exponential(next_I,curr_I,sigma,N,prev_beta,k,cap
 	#cap_for_searching_exact_sol = 10
 	output = max(0,solve_beta_for_single_time_polynomial(next_I,curr_I,sigma,N,prev_beta,k))
 	if output > cap_for_searching_exact_sol and next_I != 0 and curr_I != 0 and next_I != curr_I:
-		m = GEKKO()             # create GEKKO model
+		m = GEKKO(remote=False)             # create GEKKO model
 		beta = m.Var(value=1.0)      # define new variable, initial value=0
 		m.Equations([((1/(beta-sigma))*m.log(k*next_I/((beta-sigma)-beta*k*next_I/N))) -  ((1/(beta-sigma))*m.log(k*curr_I/((beta-sigma)-beta*k*curr_I/N))) == 1.0]) # equations
 		m.solve(disp=False)     # solve
@@ -953,7 +953,7 @@ if __name__ == "__main__":
 	top_k_community_with_highest_confirmed = 3 
 	# Display mode: daily or cumulative
 	display_mode = 'cumulative'
-	number_of_days_passed_from_16th = 107 - 16 + 1    # downloaded data on June 9,2020
+	number_of_days_passed_from_16th = 108 - 16 + 1    # downloaded data on June 9,2020
 	number_of_days_passed_from_16th_used_for_prediction =39
 	future_day_to_be_predicted = 1
 	criteria = 'train'
