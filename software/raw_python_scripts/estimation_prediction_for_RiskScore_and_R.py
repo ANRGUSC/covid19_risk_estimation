@@ -772,7 +772,8 @@ def main(show_Risk,moving_average_days, Whole_LAcounty,top_i_comm, type_plot,Tod
 		if Whole_LAcounty == False:
 			list_selected_communities=[]
 			for comm in list_communities:
-				for word in ['westhollywood','eastlosangeles','sanpedro','castaic']:
+				#for word in ['westhollywood','eastlosangeles','sanpedro','castaic']:
+				for word in ['sylmar','eastlosangeles','willowbrook','castaic','boyleheights','norwalk','westhollywood','sanpedro']:
 					if comm.name== word:
 						list_selected_communities.append(comm)
 			#print(len(list_selected_communities))
@@ -808,7 +809,9 @@ def main(show_Risk,moving_average_days, Whole_LAcounty,top_i_comm, type_plot,Tod
 		######################## Smoothing #########################
 		#n=7 
 		#ref_matrix_I = moving_ave_on_matrix(ref_matrix_I,moving_average_days)
+		ref_matrix_I = fix_matrix_I(ref_matrix_I)
 		ref_matrix_I = mov_ave(ref_matrix_I,moving_average_days,10)
+
 		#padded_I = np.zeros((len(list_selected_communities),Today_date-16 + n-1 ))
 
 # 		padded_I[:,(n-1)//2:-(n-1)//2]=ref_matrix_I
@@ -924,7 +927,7 @@ def main(show_Risk,moving_average_days, Whole_LAcounty,top_i_comm, type_plot,Tod
 			#print(result)
 			ax.set_title(state_name)
 			ax.set_ylim(0.1,7.0)
-			ax.xaxis.set_major_locator(mdates.WeekdayLocator())
+			ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=2))
 			ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %d'))
 			plt.show()
 
@@ -953,6 +956,8 @@ def main(show_Risk,moving_average_days, Whole_LAcounty,top_i_comm, type_plot,Tod
 				for ind in range(matrix_beta.shape[0]):
 					risk_comm = (10000)*np.multiply(matrix_beta[ind,:]/sigma,ref_matrix_I[ind,:-1])/(1.0*vec_population[ind])
 					print("city\n",ind)
+					#risk_comm[risk_comm < 0] = 0 
+					#print(risk_comm)
                 
                 
 					output_pred =[]
@@ -965,13 +970,13 @@ def main(show_Risk,moving_average_days, Whole_LAcounty,top_i_comm, type_plot,Tod
 					clear_output(wait=True)
 					plt.figure()
 					plt.plot(np.arange(len(risk_comm)),risk_comm,'o-r')
-					plt.plot(np.arange(len(risk_comm)-past_num_days_to_pred,len(risk_comm)),output_pred,'o--')
+					#plt.plot(np.arange(len(risk_comm)-past_num_days_to_pred,len(risk_comm)),output_pred,'o--')
 					plt.ylabel('Risk Score')
 					plt.xlabel('Number of Days Since March 16, 2020')
 					plt.title(list_selected_communities[ind].actual_name)
-					plt.legend(["Estimation", "Prediction(based on last 7 days)"])
-					plt.show()
-					#plt.legend(["Estimation"])                    
+					#plt.legend(["Estimation", "Prediction(based on last 7 days)"])
+					plt.legend(["Estimation"])      
+					plt.show()              
 					#pred_R(list_selected_communities[ind].actual_name,risk_comm[np.newaxis,:] , 75,14,1)    
 
 					#R = matrix_beta[ind,:]/sigma
@@ -1040,7 +1045,7 @@ def main(show_Risk,moving_average_days, Whole_LAcounty,top_i_comm, type_plot,Tod
 
 
 moving_average_days = 14
-number_of_days_passed_from_16th = 107 - 16 + 1
+number_of_days_passed_from_16th = 124 - 16 + 1
 sigma = 1.0/7.5 # 5.2
 gamma = 1.0/(2.3)
 
@@ -1121,7 +1126,7 @@ main(show_Risk,moving_average_days,Whole_LAcounty,top_k_community_with_highest_c
 
 show_Risk = False # True: showing risk score , False: showing Rt and its confidence interval   
 Whole_LAcounty = False  # True: plot for entire LA county , False: plot for the 4 communities
-top_k_community_with_highest_confirmed = 3
+top_k_community_with_highest_confirmed = 10
 #moving_average_days = 7
 # Display mode: daily or cumulative
 display_mode = 'cumulative'
