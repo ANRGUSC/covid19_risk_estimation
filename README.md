@@ -32,8 +32,9 @@ Parameters:
 * Whole_LAcounty:  True to plot for entire LA county, and False to plot for the 4 communities
 * moving_average_days: used for smoothing the curves
 
-sample: 
-![alt text](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/plots/map/risk_09-19-2020.png)
+map plot example: 
+<img src="https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/plots/map/risk_09-19-2020.png" width="50">
+%![alt text](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/plots/map/risk_09-19-2020.png)
 
 ## Running **estimation_R_for_heatmap_histogram_of_RiskScore_and_R.ipynb**
 
