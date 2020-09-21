@@ -33,7 +33,7 @@ Parameters:
 * moving_average_days: used for smoothing the curves
 
 map plot example: 
-<img src="https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/plots/map/risk_09-19-2020.png" width="100">
+<img src="https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/plots/map/risk_09-19-2020.png" width="550">
 
 
 ## Running **estimation_R_for_heatmap_histogram_of_RiskScore_and_R.ipynb**
