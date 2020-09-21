@@ -32,7 +32,8 @@ Parameters:
 * Whole_LAcounty:  True to plot for entire LA county, and False to plot for the 4 communities
 * moving_average_days: used for smoothing the curves
 
-map plot example: 
+Example of risk assessments of communities map:
+
 <img src="https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/plots/map/risk_09-19-2020.png" width="550">
 
 
