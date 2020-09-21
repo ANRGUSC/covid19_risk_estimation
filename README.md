@@ -16,11 +16,12 @@ The requirements.txt file contains the modules needed to run these scripts and c
 
 ## Running **estimation_prediction_for_RiskScore_and_R.ipynb**
 
+This file can be found in the [/software](https://github.com/ANRGUSC/covid19_risk_estimation/tree/master/software) folder.
 Required input files:
 [Covid-19.csv](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/Covid-19.csv), [lacounty_covid.json](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/lacounty_covid.json), [population.json](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/population.json), [Covid-19-density.csv](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/Covid-19-density.csv)
 
 Output:
--Computing and displaying the risk score as well as Rt for both the entire LA county and its communities. For simplicity, we illustrate it for the following 4 communities, namely 'West Hollywood', 'East Los Angeles', 'Castaic', and 'San Pedro'.
+- Files containing computation and visual displays of the risk score and Rt for the entire LA county and its communities. These can be found in the [dailycasesR](https://github.com/ANRGUSC/covid19_risk_estimation/tree/master/data/dailycasesR) and [map](https://github.com/ANRGUSC/covid19_risk_estimation/tree/master/plots/map) folders. We've picked to showcase this for some communities for illustration purposes. The following four communities were chosen: 'West Hollywood', 'East Los Angeles', 'Castaic', and 'San Pedro'. The files for these can be found in the [plots](https://github.com/ANRGUSC/covid19_risk_estimation/tree/master/plots) file as png files. 
 
 Parameters:
 * number_of_days_passed_from_16th: #days passed March 16,2020 (e.g. it is 84 until June 7, 2020)
