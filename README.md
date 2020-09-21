@@ -13,7 +13,7 @@ The requirements.txt file contains the modules needed to run these scripts and c
 * pip install -r requirements.txt
 * conda install --file requirements.txt
 
-**Note: Jupyter Notebook module needed to run the Jupyter Notebooks
+*Note: Jupyter Notebook module needed to run the Jupyter Notebooks
 
 
 
