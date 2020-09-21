@@ -1,6 +1,6 @@
 # COVID-19 Risk Estimation for L.A. County using a Bayesian Time-varying SIR-model
 
-This repository presents a rigorous hybrid model-and-data-driven Bayesian approach to risk scoring that yields a simplified color-coded risk level for each community. The risk score corresponds to the probability of someone currently healthy getting infected with COVID-19 in the near future. 
+This repository presents a rigorous hybrid model-and-data-driven Bayesian approach to risk scoring that yields a simplified color-coded risk level for each community in the city of Los Angeles. The risk score corresponds to the probability of someone currently healthy getting infected with COVID-19 in the near future. It is currently being used by the City of Los Angeles to help mitigate the spread of Covid-19 throughout the county. The model can also be used in similar fashion by other cities. 
 
 ## Data Source
 
@@ -10,6 +10,7 @@ This project used CoVID-19 case data from LA County Dep. of Public Health, which
 The requirements.txt file contains the modules needed to run these scripts and can be installed by running any of the following in the terminal:
 * pip install -r requirements.txt
 * conda install --file requirements.txt
+
 **Note: Jupyter Notebook module needed to run the Jupyter Notebooks
 
 
