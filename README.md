@@ -27,9 +27,9 @@ Output:
 - Files containing computation and visual displays of the risk score and Rt for the entire LA county and its communities. These can be found in the [dailycasesR](https://github.com/ANRGUSC/covid19_risk_estimation/tree/master/data/dailycasesR) and [map](https://github.com/ANRGUSC/covid19_risk_estimation/tree/master/plots/map) folders. We've picked to showcase this for some communities for illustration purposes. The following four communities were chosen: 'West Hollywood', 'East Los Angeles', 'Castaic', and 'San Pedro'. The files for these can be found in the [plots](https://github.com/ANRGUSC/covid19_risk_estimation/tree/master/plots) file as png files. 
 
 Parameters:
-* number_of_days_passed_from_16th: #days passed March 16,2020 (e.g. it is 84 until June 7, 2020)
-* show_Risk :  True if showing risk score , otherwise False to show Rt and its confidence interval
-* Whole_LAcounty:  True to plot for entire LA county, and False to plot for the 4 communities
+* number_of_days_passed_from_16th: Number of days passed since March 16, 2020 (e.g. June 7, 2020 marks 84 days since March 16, 2020)
+* show_Risk :  True if showing risk score, otherwise show Rt and its confidence interval
+* Whole_LAcounty:  True to plot for entire LA county, and False to plot for the four sample communities
 * moving_average_days: used for smoothing the curves
 
 Example of risk assessments of communities map:
