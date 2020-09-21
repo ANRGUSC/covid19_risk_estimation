@@ -2,7 +2,7 @@
 
 This repository presents a rigorous hybrid model-and-data-driven Bayesian approach to risk scoring that yields a simplified color-coded risk level for each community in the city of Los Angeles. The risk score corresponds to the probability of someone currently healthy getting infected with COVID-19 in the near future. It is currently being used by the City of Los Angeles to help mitigate the spread of Covid-19 throughout the county. 
 
-<ins>The model can also be used in similar fashion by other cities</ins>.
+<ins>This model can be replicated by other cities/communities to help mitigate Covid-19 cases</ins>.
 
 ## Data Source
 
