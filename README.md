@@ -7,22 +7,12 @@ This repository presents a rigorous hybrid model-and-data-driven Bayesian approa
 This project used CoVID-19 case data from LA County Dep. of Public Health, which is also available in the following repository: [Data](https://github.com/ANRGUSC/lacounty_covid19_data/).
 
 ## Instructions for running the following codes
-Note: These files are developed and tested in Python3.6.
+The requirements.txt file contains the modules needed to run these scripts and can be installed by running any of the following in the terminal:
+* pip install -r requirements.txt
+* conda install --file requirements.txt
+**Note: Jupyter Notebook module needed to run the Jupyter Notebooks
 
-The following packages are required to run the codes:
-* jupyter noteboook
-* numpy
-* json
-* re
-* matplotlib
-* itertools
-* pandas
-* scipy
-* gekko
-* IPython
-* datetime
 
-These packages can be installed by issuing the following command "pip install name_of_the_package".
 
 ## Running **estimation_prediction_for_RiskScore_and_R.ipynb**
 
