@@ -1,6 +1,8 @@
 # COVID-19 Risk Estimation for L.A. County using a Bayesian Time-varying SIR-model
 
-This repository presents a rigorous hybrid model-and-data-driven Bayesian approach to risk scoring that yields a simplified color-coded risk level for each community in the city of Los Angeles. The risk score corresponds to the probability of someone currently healthy getting infected with COVID-19 in the near future. It is currently being used by the City of Los Angeles to help mitigate the spread of Covid-19 throughout the county. The model can also be used in similar fashion by other cities. 
+This repository presents a rigorous hybrid model-and-data-driven Bayesian approach to risk scoring that yields a simplified color-coded risk level for each community in the city of Los Angeles. The risk score corresponds to the probability of someone currently healthy getting infected with COVID-19 in the near future. It is currently being used by the City of Los Angeles to help mitigate the spread of Covid-19 throughout the county. 
+
+The model can also be used in similar fashion by other cities. 
 
 ## Data Source
 
