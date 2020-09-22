@@ -47,7 +47,7 @@ Output:
 * Generating a csv file for showing a heatmap of risk scores
 
 Parameters:
-* number_of_days_passed_from_16th: #days passed March 16,2020 (e.g. it is 84 until June 7, 2020)
+* number_of_days_passed_from_16th: number of days passed March 16,2020 (e.g. June 7, 2020 marks 84 days since March 16, 2020)
 * moving_average_days: used for smoothing the curves
 
 ## Running **generate_heatmap.py**
