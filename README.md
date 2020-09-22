@@ -37,10 +37,10 @@ Example of risk assessments of communities gif through time:
 <img src="https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/plots/covidlarisk.gif" width="550">
 
 
-## Running **estimation_R_for_heatmap_histogram_of_RiskScore_and_R.ipynb**
+## Running **estimation_R_for_heatmap.ipynb**
 
 Required input files:
-“Covid-19.csv”, “lacounty_covid.json”, “population.json”, “Covid-19-density.csv”
+[Covid-19.csv](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/Covid-19.csv), [lacounty_covid.json](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/lacounty_covid.json), [population.json](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/population.json), [Covid-19-density.csv](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/Covid-19-density.csv)
 
 Output:
 * Computing and displaying the histogram of risk scores as well as Rt across all communities
