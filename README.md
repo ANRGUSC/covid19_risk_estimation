@@ -17,9 +17,10 @@ The requirements.txt file contains the modules needed to run these scripts and c
 
 
 
-## Running **estimation_prediction_for_RiskScore_and_R.ipynb**
+## Running **estimation_prediction_for_RiskScore_and_R.ipynb(.py)**
 
-This file can be found in the [/software](https://github.com/ANRGUSC/covid19_risk_estimation/tree/master/software) folder.
+This main file can be found in the [/software](https://github.com/ANRGUSC/covid19_risk_estimation/tree/master/software) folder.
+
 Required input files:
 [Covid-19.csv](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/Covid-19.csv), [lacounty_covid.json](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/lacounty_covid.json), [population.json](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/population.json), [Covid-19-density.csv](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/Covid-19-density.csv)
 
