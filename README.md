@@ -53,13 +53,12 @@ Parameters:
 ## Running **generate_heatmap.py**
 
 Required input files:
-“Covid-19.csv”, “lacounty_covid.json”, “population.json”, “Covid-19-density.csv”, "la.shp"
+[Covid-19.csv](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/Covid-19.csv), [lacounty_covid.json](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/lacounty_covid.json), [population.json](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/population.json), [Covid-19-density.csv](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/Covid-19-density.csv), [la.shp](https://github.com/ANRGUSC/covid19_risk_estimation/blob/master/data/la.shp)
+"la.shp"
 
 Output:
-* Generate heatmaps for each day 
+* Heat maps for each day 
 
-Execution command:
-* python3.x generate_heatmap.py
 
 ## Questions
 For any questions about this project, please contact Prof. Bhaskar Krishnamachari (bkrishna@usc.edu).
