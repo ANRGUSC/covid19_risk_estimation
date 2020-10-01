@@ -59,6 +59,12 @@ Required input files:
 Output:
 * Heat maps for each day 
 
+## Google Colab
+
+Colab notebook includes instructions, explanation of code pieces, and downloadable sample data to run. 
+
+[![Open Sample code in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ExWvM99PE5fRvo9KAadakO28pYAT39XX?usp=sharing)
+
 
 ## Questions
 For any questions about this project, please contact Prof. Bhaskar Krishnamachari (bkrishna@usc.edu).
