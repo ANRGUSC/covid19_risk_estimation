@@ -10,36 +10,35 @@ inverse of average recovery dates, and number of times actual infected cases is 
 
 # Outputs:
 # - risk        :    Vector of the risk score of the community over time
-
     c = len(vec_I)
     matrix_I = vec_I[np.newaxis,:]
     beta_SIR,R,risk = np.zeros((c-1,)),np.zeros((c-1,)),np.zeros((c-1,))
     for time in range(c-1):
         clear_output(wait=True)
         next_I,curr_I,N = ave_k*vec_I[time+1],ave_k*vec_I[time],population
-        print("curr", curr_I, "next", next_I)
-        if next_I>curr_I:
-            if next_I != 0 and curr_I != 0 and next_I != curr_I:
-                m = GEKKO()             # create GEKKO model
-                beta = m.Var(value=.2)      # define new variable, initial value=0
-                m.Equations([((1/(beta-sigma))*m.log(next_I/((beta-sigma)-beta*next_I/N))) -  ((1/(beta-sigma))*m.log(curr_I/((beta-sigma)-beta*curr_I/N))) == 1.0]) # equations
-                m.solve(disp=False)     # solve
-                output = beta.value[0]
+        
+        if curr_I != 0:
+            a1,a2 = curr_I-(curr_I**2)/N, next_I-(next_I**2)/N
+            b1,b2 = -sigma*curr_I, -sigma*next_I
+            if next_I>curr_I:
+                delta_t =1
             else:
-                if curr_I != 0:
-                    output = (next_I - curr_I+sigma*curr_I)/(curr_I-(1/N)*curr_I**2)
-                else:
-                    output = 0
-        else:
-            if curr_I != 0:
-                output = (next_I - curr_I+sigma*curr_I)/(curr_I-(1/N)*curr_I**2)
+                delta_t =-1
+            A = a1*a2*delta_t
+            B = (a1*b2+a2*b1)*delta_t-(a1-a2)
+            C = b1*b2*delta_t-(b1-b2)
+            if B**2-4*A*C > 0:
+                output = (-B+np.sqrt(B**2-4*A*C))/(2*A)
             else:
                 output = 0
-
+            #output = (next_I - curr_I+sigma*curr_I)/(curr_I-(1/N)*curr_I**2)
+        else:
+            output = 0
+        print("curr", curr_I, "next", next_I)
         beta_SIR[time] = max(0,output)
         #beta_SIR[time] = max(0,solve_beta_for_single_time_exponential(matrix_I[0,time+1],matrix_I[0,time],sigma,population,0) )
         R[time] = beta_SIR[time] / sigma
-        risk[time] = (10000)*R[time]*vec_I[time]*ave_k/(1.0*population)
+        risk[time] = max((10000)*R[time]*vec_I[time]*ave_k/(1.0*population),0)
     clear_output(wait=True) 
 
     return risk
