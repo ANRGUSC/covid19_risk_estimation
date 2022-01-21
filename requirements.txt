@@ -8,4 +8,4 @@ seaborn==0.9.0
 scipy==1.4.1
 gekko==0.2.6
 beautifulsoup4==4.9.1
-ipython==7.18.1
+ipython==7.31.1
