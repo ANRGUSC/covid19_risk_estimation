@@ -24,7 +24,7 @@ import csv
 
 
 
-API_KEY = '576004cefa1b43648fd6cd7059ae8196' # get api key from:  https://opencagedata.com
+API_KEY = 'ENTER YOUR API KEY Here' # get api key from:  https://opencagedata.com
 covid_json = 'lacounty_covid.json'
 population_json = 'population.json'
 density_csv = 'population_density.csv'
